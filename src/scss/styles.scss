@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=B612+Mono&family=DM+Serif+Display:ital@0;1&display=swap");
+@import "_variables";
+@import "_elements";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Serif Display", monospace;
+  padding: 45px;
+  background-color: yellowgreen;
+}
+
+.left {
+  display: 100%;
+  width: 100%;
+  height: 100%;
+  flex-basis: 50%;
+  background-color: white;
+  background: white;
+}
+
+header {
+  min-width: 550px;
+  width: 50%;
+  nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-family: "Titillium Web", sans-serif;
+    background-color: white;
+    img {
+      width: "250px";
+    }
+    .nav-link {
+      flex: 1;
+      text-align: right;
+      ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+        font-family: "Paytone One", sans-serif;
+        font-style: italic;
+        color: white;
+        a {
+          text-decoration: none;
+        }
+        ::after {
+          background: yellowgreen;
+          display: block;
+          margin: auto;
+          width: 0%;
+          height: 2px;
+          content: "";
+          transition: 0.5s;
+        }
+        :hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+main {
+  h1,
+  h6 {
+    text-align: center;
+  }
+  h1 {
+    font-size: 58px;
+    margin-bottom: 20px;
+  }
+  h6 {
+    font-family: "B612 Mono";
+    font-size: 12px;
+    margin-bottom: 50px;
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 80vh;
+  margin-bottom: 150px;
+  .hero__img {
+    background-image: url("https://source.unsplash.com/random/");
+    background-position: center center;
+    background-size: cover;
+    &:first-child {
+      background-image: url("https://source.unsplash.com/random/1");
+    }
+    &:last-child {
+      background-image: url("https://source.unsplash.com/random/2");
+    }
+    &:nth-last-child(2) {
+      background-image: url("https://source.unsplash.com/random/3");
+    }
+  }
+}
+
+footer {
+  margin: 100px 0px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 10fr 2fr;
+  background-color: black;
+  gap: 1px;
+  height: 200px;
+  border: 1px solid black;
+  div {
+    background-color: white;
+    &:first-child {
+      grid-column: span 2;
+    }
+    &:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+}
